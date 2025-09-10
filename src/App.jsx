@@ -18,6 +18,8 @@ import QuestionnaireForm from './pages/user/QuestionnaireForm';
 import ResultsPage from './pages/user/ResultsPage';
 
 import AdminDashboard from './pages/admin/AdminDashboard';
+import UserListPage from './pages/admin/UserListPage';
+import UserHistoryPage from './pages/admin/UserHistoryPage';
 
 // const UserDashboard = () => <div className="text-center"><h1>Dashboard Pengguna</h1></div>;
 // const AdminDashboard = () => <div className="text-center"><h1>Dashboard Admin</h1></div>;
@@ -75,7 +77,8 @@ function App() {
           }
         >
           <Route path="dashboard" element={<AdminDashboard />} />
-          {/* Tambahkan rute admin lainnya di sini, misal: <Route path="users" ... /> */}
+          <Route path="users" element={<UserListPage />} />
+          <Route path="history" element={<UserHistoryPage />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>
