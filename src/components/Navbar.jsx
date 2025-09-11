@@ -11,11 +11,11 @@ const Navbar = ({ session }) => {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white border-b border-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-blue-600">
+            <Link to="/" className="text-2xl font-bold text-primary">
               SLUMBR
             </Link>
           </div>
@@ -40,7 +40,7 @@ const Navbar = ({ session }) => {
                   <Link to="/login" className="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md text-sm font-medium">
                     Login
                   </Link>
-                  <Link to="/register" className="bg-blue-600 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
+                  <Link to="/register" className="bg-primary text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
                     Register
                   </Link>
                 </>

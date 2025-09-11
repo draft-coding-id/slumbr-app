@@ -152,7 +152,7 @@ const UserDashboard = () => {
             </p>
             <Link 
               to="/kuesioner"
-              className="w-full text-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+              className="w-full text-center px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
               Mulai Test
             </Link>

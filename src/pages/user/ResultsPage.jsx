@@ -62,7 +62,7 @@ const ResultsPage = () => {
       <div className="text-center p-12">
         <h2 className="text-2xl font-bold">Hasil tidak ditemukan</h2>
         <p className="mt-4">Kami tidak dapat menemukan hasil prediksi Anda. Silakan coba isi kuesioner kembali.</p>
-        <Link to="/kuesioner" className="mt-6 inline-block px-6 py-2 bg-blue-600 text-white rounded-lg">
+        <Link to="/kuesioner" className="mt-6 inline-block px-6 py-2 bg-primary text-white rounded-lg">
           Isi Kuesioner
         </Link>
       </div>
@@ -89,7 +89,7 @@ const ResultsPage = () => {
       <div className="mt-8">
         <Link 
           to="/dashboard"
-          className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+          className="px-8 py-3 bg-primary text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
         >
           Kembali ke Dashboard
         </Link>

@@ -36,7 +36,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-12">
+    <div className="flex justify-center items-center py-12  min-h-[80vh]">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">Buat Akun Baru</h2>
         
@@ -90,7 +90,7 @@ const RegisterPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none disabled:bg-blue-400"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none disabled:bg-blue-400"
             >
               {loading ? 'Memproses...' : 'Daftar'}
             </button>
@@ -98,7 +98,7 @@ const RegisterPage = () => {
         </form>
         <p className="text-sm text-center text-gray-600">
           Sudah punya akun?{' '}
-          <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
+          <Link to="/login" className="font-medium text-primary hover:text-blue-500">
             Login di sini
           </Link>
         </p>

@@ -20,6 +20,7 @@ import ResultsPage from './pages/user/ResultsPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import UserListPage from './pages/admin/UserListPage';
 import UserHistoryPage from './pages/admin/UserHistoryPage';
+import UserLayout from './components/user/UserLayout';
 
 // const UserDashboard = () => <div className="text-center"><h1>Dashboard Pengguna</h1></div>;
 // const AdminDashboard = () => <div className="text-center"><h1>Dashboard Admin</h1></div>;
@@ -51,23 +52,23 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Rute Publik */}
+        {/* Route Publik */}
         <Route element={<Layout session={session} />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<PublicRoute session={session}><LoginPage /></PublicRoute>} />
           <Route path="/register" element={<PublicRoute session={session}><RegisterPage /></PublicRoute>} />
-          
-          {/* Rute Privat (Dashboard Layout) */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        
+        {/* Route User */}
+        <Route element={<UserLayout session={session} />}>
           <Route path="/dashboard" element={<PrivateRoute session={session}><UserDashboard /></PrivateRoute>} />
           <Route path="/kuesioner" element={<PrivateRoute session={session}><QuestionnaireForm /></PrivateRoute>} />
           <Route path="/hasil" element={<PrivateRoute session={session}><ResultsPage /></PrivateRoute>} />
-
-          <Route path="/admin" element={<PrivateRoute session={session}><AdminDashboard /></PrivateRoute>} />
-          
           <Route path="*" element={<NotFound />} />
         </Route>
 
-        {/* Rute Admin */}
+        {/* Route Admin */}
         <Route 
           path="/admin" 
           element={
@@ -79,7 +80,6 @@ function App() {
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="users" element={<UserListPage />} />
           <Route path="history" element={<UserHistoryPage />} />
-
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
