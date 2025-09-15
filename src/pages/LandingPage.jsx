@@ -110,6 +110,45 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      <section className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div className="py-16">
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-gray-800">Kenapa PSQI?</h2>
+            <p className="mt-2 text-gray-600">Pittsburgh Sleep Quality Index (PSQI) adalah instrumen standar yang menilai kualitas tidur dalam sebulan terakhir melalui 7 komponen. Skor total membantu mengklasifikasikan kualitas tidur dan menentukan area perbaikan.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
+            <div className="p-y-6 flex items-center gap-x-4">
+              <div className="text-5xl mb-4 text-blue-500">😴</div>
+              <h3 className="text-xl font-semibold mb-2">Kualitas Tidur Subjektif</h3>
+            </div>
+            <div className="p-y-6 flex items-center gap-x-4">
+              <div className="text-5xl mb-4 text-blue-500">⏰</div>
+              <h3 className="text-xl font-semibold mb-2">Latensi Tidur</h3>
+            </div>
+            <div className="p-y-6 flex items-center gap-x-4">
+              <div className="text-5xl mb-4 text-blue-500">🕐</div>
+              <h3 className="text-xl font-semibold mb-2">Durasi Tidur</h3>
+            </div>
+            <div className="p-y-6 flex items-center gap-x-4">
+              <div className="text-5xl mb-4 text-blue-500">📊</div>
+              <h3 className="text-xl font-semibold mb-2">Efisiensi Tidur</h3>
+            </div>
+            <div className="p-y-6 flex items-center gap-x-4">
+              <div className="text-5xl mb-4 text-blue-500">🔄</div>
+              <h3 className="text-xl font-semibold mb-2">Gangguan Tidur</h3>
+            </div>
+            <div className="p-y-6 flex items-center gap-x-4">
+              <div className="text-5xl mb-4 text-blue-500">💊</div>
+              <h3 className="text-xl font-semibold mb-2">Penggunaan Obat tidur</h3>
+            </div>
+            <div className="p-y-6 flex items-center gap-x-4">
+              <div className="text-5xl mb-4 text-blue-500">☀️</div>
+              <h3 className="text-xl font-semibold mb-2">Disfungsi Siang Hari</h3>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

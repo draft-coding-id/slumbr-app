@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PredictedResultChart from '../../components/PredictedResultChart';
 import PredictedResultPieChart from '../../components/PredictedResultPieChart';
+import PredictedResultCountChart from '../../components/PredictedResultCountChart';
+import PredictedResultByAngkatanChart from '../../components/PredictedResultByAngkatanChart';
 import { supabase } from '../../lib/supabaseClient';
 
 const UserHistoryPage = () => {
@@ -26,7 +28,6 @@ const UserHistoryPage = () => {
         .from('predictions')
         .select(`
           id,
-          nim,
           jenis_kelamin,
           no_telepon,
           angkatan,
@@ -54,7 +55,8 @@ const UserHistoryPage = () => {
           predicted_result,
           profiles (
             full_name,
-            email
+            email,
+            nim
           )
         `)
         .order('created_at', { ascending: false });
@@ -80,7 +82,7 @@ const UserHistoryPage = () => {
   const downloadCSV = () => {
     const headers = [
       'ID Prediksi', 
-      'Tanggal', 
+      // 'Tanggal', 
       'Nama Pengguna', 
       'Email', 
       'Nim',
@@ -113,10 +115,10 @@ const UserHistoryPage = () => {
       headers.join(','),
       ...history.map(item => [
         item.id,
-        new Date(item.created_at).toLocaleString('id-ID'),
+        // new Date(item.created_at).toLocaleString('id-ID'),
         item.profiles.full_name,
         item.profiles.email,
-        item.nim,
+        item.profiles.nim,
         item.jenis_kelamin,
         item.no_telepon,
         item.angkatan,
@@ -174,11 +176,18 @@ const UserHistoryPage = () => {
       </div>
 
       <div className='bg-white shadow-md rounded-lg overflow-hidden p-6 mb-8'>
+        <PredictedResultCountChart history={history} />
+      </div>
+      <div className='bg-white shadow-md rounded-lg overflow-hidden p-6 mb-8'>
         <PredictedResultChart history={history} />
+      </div>
+      <div className='bg-white shadow-md rounded-lg overflow-hidden p-6 mb-8'>
+        <PredictedResultByAngkatanChart history={history} />
       </div>
       <div className='bg-white shadow-md rounded-lg overflow-hidden p-6 mb-8'>
         <PredictedResultPieChart history={history} />
       </div>
+      
 
       <div className="bg-white shadow-md rounded-lg overflow-hidden p-6">
         <div className="flex items-center justify-between mb-4">

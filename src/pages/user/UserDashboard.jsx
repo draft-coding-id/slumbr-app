@@ -4,6 +4,7 @@ import { supabase } from '../../lib/supabaseClient';
 import ClockImg from '../../assets/images/clock.png';
 import DartImg from '../../assets/images/dart.png';
 import LampImg from '../../assets/images/lamp.png';
+import TabbedRecommendations from '../TabbedRecommendations';
 
 const UserDashboard = () => {
   const [user, setUser] = useState(null);
@@ -160,77 +161,12 @@ const UserDashboard = () => {
         </div>
       </div>
 
-      {/* Informasi Rekomendasi Tentang Hasil Prediksi */}
-      <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-4">Rekomendasi Hasil Prediksi</h2>
-        
-        <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Tab untuk Kualitas Tidur Baik */}
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-              <div className="flex items-center mb-4">
-                <div className="w-4 h-4 bg-green-500 rounded-full mr-3"></div>
-                <h3 className="text-xl font-semibold text-green-800">Kualitas Tidur Baik</h3>
-              </div>
-              <div className="space-y-3">
-                <div className="bg-white p-4 rounded-md border border-green-100">
-                  <h4 className="font-semibold text-green-700 mb-2">✓ Pertahankan Rutinitas</h4>
-                  <p className="text-sm text-gray-600">Teruskan jadwal tidur yang konsisten dan kebiasaan sehat yang sudah Anda jalani.</p>
-                </div>
-                <div className="bg-white p-4 rounded-md border border-green-100">
-                  <h4 className="font-semibold text-green-700 mb-2">✓ Optimalisasi Lingkungan</h4>
-                  <p className="text-sm text-gray-600">Pastikan kamar tidur tetap sejuk, gelap, dan tenang untuk kualitas tidur optimal.</p>
-                </div>
-                <div className="bg-white p-4 rounded-md border border-green-100">
-                  <h4 className="font-semibold text-green-700 mb-2">✓ Monitor Berkelanjutan</h4>
-                  <p className="text-sm text-gray-600">Lakukan evaluasi berkala untuk memastikan kualitas tidur tetap terjaga.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Tab untuk Kualitas Tidur Buruk */}
-            <div className="bg-red-50 p-6 rounded-lg border border-red-200">
-              <div className="flex items-center mb-4">
-                <div className="w-4 h-4 bg-red-500 rounded-full mr-3"></div>
-                <h3 className="text-xl font-semibold text-red-800">Kualitas Tidur Buruk</h3>
-              </div>
-              <div className="space-y-3">
-                <div className="bg-white p-4 rounded-md border border-red-100">
-                  <h4 className="font-semibold text-red-700 mb-2">⚠ Perbaiki Jadwal Tidur</h4>
-                  <p className="text-sm text-gray-600">Tetapkan waktu tidur dan bangun yang konsisten setiap hari, termasuk akhir pekan.</p>
-                </div>
-                <div className="bg-white p-4 rounded-md border border-red-100">
-                  <h4 className="font-semibold text-red-700 mb-2">⚠ Hindari Stimulan</h4>
-                  <p className="text-sm text-gray-600">Kurangi kafein, alkohol, dan layar gadget minimal 2 jam sebelum tidur.</p>
-                </div>
-                <div className="bg-white p-4 rounded-md border border-red-100">
-                  <h4 className="font-semibold text-red-700 mb-2">⚠ Konsultasi Ahli</h4>
-                  <p className="text-sm text-gray-600">Pertimbangkan untuk berkonsultasi dengan dokter jika masalah tidur berlanjut.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Tips Umum */}
-          <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-            <h3 className="text-xl font-semibold text-blue-800 mb-4">💡 Tips Umum untuk Tidur Berkualitas</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-md border border-blue-100">
-                <h4 className="font-semibold text-blue-700 mb-2">Relaksasi</h4>
-                <p className="text-sm text-gray-600">Praktikkan teknik relaksasi seperti meditasi atau pernapasan dalam sebelum tidur.</p>
-              </div>
-              <div className="bg-white p-4 rounded-md border border-blue-100">
-                <h4 className="font-semibold text-blue-700 mb-2">Olahraga Teratur</h4>
-                <p className="text-sm text-gray-600">Lakukan aktivitas fisik secara teratur, namun hindari olahraga berat menjelang tidur.</p>
-              </div>
-              <div className="bg-white p-4 rounded-md border border-blue-100">
-                <h4 className="font-semibold text-blue-700 mb-2">Pola Makan</h4>
-                <p className="text-sm text-gray-600">Hindari makan besar dan minum berlebihan 2-3 jam sebelum waktu tidur.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Tab Rekomendasi Tidur */}
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Rekomendasi Tidur Berdasarkan Komponen</h2>
+        <TabbedRecommendations />
       </div>
+
     </div>
   );
 };

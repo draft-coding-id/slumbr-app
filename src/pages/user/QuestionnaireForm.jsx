@@ -21,7 +21,6 @@ const QuestionnaireForm = () => {
   
   // State untuk menyimpan semua jawaban form
   const [answers, setAnswers] = useState({
-    nim: '',
     jenis_kelamin: '',
     no_telepon: '',
     angkatan: '',
@@ -107,7 +106,6 @@ const QuestionnaireForm = () => {
         .from('predictions')
         .insert([{
           user_id: user.id,
-          nim: answers.nim,
           jenis_kelamin: answers.jenis_kelamin,
           no_telepon: answers.no_telepon,
           angkatan: answers.angkatan,
@@ -132,6 +130,7 @@ const QuestionnaireForm = () => {
           p8: answers.p8,
           p9: answers.p9,
           predicted_result: predictionResult.kualitas_tidur_prediksi,
+          highest_score_component: predictionResult.komponen_tertinggi
         }]);
 
       if (insertError) {
@@ -163,14 +162,14 @@ const QuestionnaireForm = () => {
       <p className="text-gray-600 mb-8">Mohon jawab semua pertanyaan berdasarkan kebiasaan Anda selama satu bulan terakhir.</p>
       
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+        {/* <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">
             NIM
           </h3>
           <div className="space-y-4">
             <input type="text" name="nim" value={answers.nim} onChange={handleChange} required className="w-full md:w-1/2 p-2 border border-gray-300 rounded-md" />
           </div>
-        </div>
+        </div> */}
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">
             Jenis Kelamin

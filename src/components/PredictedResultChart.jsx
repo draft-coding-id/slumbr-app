@@ -53,7 +53,7 @@ const PredictedResultChart = ({ history }) => {
       horizontalAlign: 'center'
     },
     colors: ['#2563eb', '#22c55e', '#ef4444', '#eab308'], // blue, green, red, yellow for each program
-    dataLabels: { enabled: true },
+    // dataLabels: { enabled: true },
     tooltip: {
       y: {
         formatter: val => `${val} mahasiswa`
