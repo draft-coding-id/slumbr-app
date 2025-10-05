@@ -130,6 +130,13 @@ const QuestionnaireForm = () => {
           p8: answers.p8,
           p9: answers.p9,
           predicted_result: predictionResult.kualitas_tidur_prediksi,
+          c1: predictionResult.scores.C1,
+          c2: predictionResult.scores.C2,
+          c3: predictionResult.scores.C3,
+          c4: predictionResult.scores.C4,
+          c5: predictionResult.scores.C5,
+          c6: predictionResult.scores.C6,
+          c7: predictionResult.scores.C7,
           highest_score_component: predictionResult.komponen_tertinggi
         }]);
 
